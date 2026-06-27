@@ -1,12 +1,11 @@
 #collect source files (you can list them explicitly or use GLOB)
 
-
 set(QSIM_SOURCES
     core/simulator.cpp
     main.cpp
 )
 
-add_library(qsim_core  SHARED
+add_library(qsim_core  STATIC
     ${QSIM_SOURCES}
 )
 

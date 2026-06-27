@@ -7,7 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 option(QSIM_BUILD_TESTS "Build tests with Catch2" OFF)
 option(QSIM_BUILD_BENCHMARKS "Build benchmarks with Google Benchmark" OFF)
-option(QSIM_BUILD_BINDINGS "Build Python bindings with pybind11" OFF)
+option(QSIM_BUILD_BINDINGS "Build Python bindings with pybind11" ON)
 
 if(QSIM_BUILD_BINDINGS)
     find_package(pybind11 REQUIRED)
