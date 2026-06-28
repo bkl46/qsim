@@ -1,5 +1,5 @@
 // test/cpp/types_test.cpp
-#include "../../include/qsim/core/types.hpp"
+#include "../../../include/qsim/core/types.hpp"
 #include <iostream>
 #include <cassert>
 #include <type_traits>

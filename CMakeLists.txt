@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-option(QSIM_BUILD_TESTS "Build tests with Catch2" OFF)
+option(QSIM_BUILD_TESTS "Build tests with Catch2" ON)
 option(QSIM_BUILD_BENCHMARKS "Build benchmarks with Google Benchmark" OFF)
 option(QSIM_BUILD_BINDINGS "Build Python bindings with pybind11" ON)
 
@@ -14,7 +14,21 @@ if(QSIM_BUILD_BINDINGS)
 endif()
 
 if(QSIM_BUILD_TESTS)
-    find_package(Catch2 REQUIRED)
+
+
+
+    # get Catch2
+    include(FetchContent)
+    FetchContent_Declare(
+        Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG v3.4.0
+    )
+    FetchContent_MakeAvailable(Catch2)
+
+
+
+
 endif()
 
 if(QSIM_BUILD_BENCHMARKS)

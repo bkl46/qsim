@@ -250,12 +250,12 @@ struct BeadIndex {
 
 struct SimulationParameters {
     f64 beta;           // inverse temperature (1/kt)
-    i32 num_beads;      // number of trotter slices
-    i32 num_particles;  // number of particles
-    i32 num_dimensions; // spatial dimensions (1, 2, or 3)
+    i32 num_beads = 0;      // number of trotter slices
+    i32 num_particles = 0;  // number of particles
+    i32 num_dimensions = 3; // spatial dimensions (1, 2, or 3)
     f64 time_step;      // time step for propagation (beta / num_beads)
     
-    // default 
+    // default  constructor
     SimulationParameters() = default;
     
     // constructor with validation
