@@ -5,6 +5,7 @@ enable_testing()
 set(TEST_SOURCES
     cpp/unit/test_types.cpp
     cpp/unit/test_parallel.cpp
+    cpp/unit/test_path.cpp
 )
 
 add_executable(qsim_tests ${TEST_SOURCES})
