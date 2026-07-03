@@ -6,9 +6,27 @@ set(TEST_SOURCES
     cpp/unit/test_types.cpp
     cpp/unit/test_parallel.cpp
     cpp/unit/test_path.cpp
+    #cpp/unit/test_rng_xoshiro.cpp
+    cpp/unit/test_xoshiro.cpp
 )
 
 add_executable(qsim_tests ${TEST_SOURCES})
+
+
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    # Debug: Keep fast enough for tests but allow debugging
+    target_compile_options(qsim_tests PRIVATE
+        $<$<CONFIG:Debug>:-O1 -g>  # -O1 is faster than -O0 for tests
+    )
+    
+    # Release: Maximum performance
+    target_compile_options(qsim_tests PRIVATE
+        $<$<CONFIG:Release>:-O3 -march=native -mtune=native>
+    )
+endif()
+
+
 
 target_link_libraries(qsim_tests
     PUBLIC
