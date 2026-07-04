@@ -7,3 +7,5 @@
 #include "core/types.hpp"
 #include "path/bead.hpp"
 #include "path/path.hpp"
+#include "rng/XoshiroCpp.hpp"
+#include "potential/harmonic.hpp"
