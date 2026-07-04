@@ -17,7 +17,7 @@
 using namespace XoshiroCpp;
 using Catch::Approx;
 
-// Helper for statistical tolerance
+// helper for statistical tolerance
 constexpr double THREE_SIGMA = 3.0;
 constexpr double FIVE_SIGMA = 5.0;
 constexpr double TEN_SIGMA = 10.0;
