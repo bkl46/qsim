@@ -9,11 +9,25 @@ int main(int argc, char* argv[])
 
     std::cout<<"Hello World\n";
 
+    if(argc > 1)
+    {
+        int i = atoi(argv[1]);
+        std::cout << i << " entry \n";
+    }
+
 
 
     simulate();
 
     XoshiroCpp::Xoshiro256StarStar rng(10);
+
+    Particle p = Particle::boson(5);
+
+    std::cout << "particle with \n";
+
+    std::cout << "  " << p.mass() << " au mass\n";
+    std::cout << "  " << p.charge() << " charge\n";
+    std::cout << "  " << p.spin() << " spin\n";
 
     std::cout << "rng created, number: " << rng() << "\n";
 

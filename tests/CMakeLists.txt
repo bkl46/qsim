@@ -6,8 +6,12 @@ set(TEST_SOURCES
     cpp/unit/test_types.cpp
     cpp/unit/test_parallel.cpp
     cpp/unit/test_path.cpp
-    #cpp/unit/test_rng_xoshiro.cpp
     cpp/unit/test_xoshiro.cpp
+    cpp/unit/test_particle.cpp
+    #
+    #cpp/unit/test_system.cpp
+    cpp/unit/test_path_ensemble.cpp
+    
 )
 
 add_executable(qsim_tests ${TEST_SOURCES})
